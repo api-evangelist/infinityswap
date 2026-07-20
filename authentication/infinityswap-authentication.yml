@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.bitfinity.network/getting-started
+notes: >-
+  The Bitfinity EVM JSON-RPC endpoint is a public, keyless blockchain RPC. There
+  is no API key, OAuth, or bearer credential — any client (MetaMask, ethers.js,
+  Hardhat) connects directly by network URL and chain ID. Authorization for state
+  changes is enforced at the protocol layer by ECDSA transaction signatures
+  (the sender's private key), not by an API access credential. Confirmed by live
+  probing: read/query methods succeed with no auth header.
+summary:
+  types: [none]
+  api_key_in: []
+  oauth2_flows: []
+  protocol_auth: ecdsa-transaction-signature
+schemes:
+- name: publicRpc
+  type: none
+  description: >-
+    Public EVM JSON-RPC endpoint; no API-level authentication. Requests are
+    unauthenticated; on-chain writes are authorized by the transaction signer's
+    private key (secp256k1 / EIP-155), submitted via eth_sendRawTransaction.
+  sources: ["live probe: https://mainnet.bitfinity.network"]
