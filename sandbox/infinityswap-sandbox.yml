@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.bitfinity.network/getting-started
+notes: >-
+  Bitfinity operates a public testnet alongside mainnet, plus a testnet token
+  faucet, so developers can deploy and exercise contracts before going to
+  mainnet. Only values confirmed from live probing or the docs are recorded here;
+  the testnet RPC did not respond to a live JSON-RPC probe from this environment
+  and the faucet page is geo-restricted, so those are recorded as documented but
+  unverified. No secret test credentials exist — the EVM RPC is public and
+  keyless.
+environments:
+- name: mainnet
+  rpc_url: https://mainnet.bitfinity.network
+  chain_id: 355110
+  chain_id_hex: '0x56b26'
+  currency_symbol: BFT
+  client_version: evm_core/0.2.0
+  verified: live
+  verified_via: "eth_chainId / net_version / web3_clientVersion JSON-RPC probe"
+- name: testnet
+  rpc_url: https://testnet.bitfinity.network
+  faucet: https://bitfinity.network/faucet
+  currency_symbol: BFT
+  verified: documented
+  note: >-
+    Documented testnet used for pre-mainnet contract testing with a token faucet;
+    RPC endpoint did not respond to a live probe from this environment and the
+    faucet page is geo-restricted.
+tooling:
+  metamask: https://docs.bitfinity.network/getting-started
+  remix: https://docs.bitfinity.network/getting-started
+  hardhat: https://docs.bitfinity.network/getting-started
+auth: none
+auth_note: >-
+  Public keyless EVM JSON-RPC — no test/live API-key separation. Isolation is by
+  network (mainnet vs testnet chain), not by credential.

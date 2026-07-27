@@ -1,0 +1,36 @@
+# InfinitySwap (Bitfinity Network)
+
+> InfinitySwap is now Bitfinity Network — a next-generation Ethereum Virtual Machine (EVM) that serves as a Layer 2 for Bitcoin and Bitcoin on-chain assets, built on the Internet Computer (ICP). It delivers 1000+ TPS EVM execution with full Ethereum tooling compatibility (MetaMask, Remix, Hardhat) via a standard Ethereum JSON-RPC endpoint, and supports bridging BTC, ckBTC, and other assets. Backed by Polychain.
+
+## API
+
+- [Bitfinity EVM JSON-RPC](https://docs.bitfinity.network/): Standard Ethereum JSON-RPC 2.0 endpoint at https://mainnet.bitfinity.network — Chain ID 355110 (0x56b26), client evm_core/0.2.0. Public, keyless; supports eth_*, net_*, and web3_* method namespaces. Compatible with ethers.js, web3.js, MetaMask, Hardhat, and Remix.
+
+## Docs
+
+- [Developer Documentation](https://docs.bitfinity.network/): EVM docs, getting started, bridging technology, full node API, EVM spec, IC agent.
+- [Getting Started](https://docs.bitfinity.network/getting-started): Add Bitfinity to MetaMask, testnet tokens, Remix, Hardhat, block explorer guides.
+- [Blog](https://blog.bitfinity.network/): Product and developer articles.
+
+## Developer tooling
+
+- [GitHub Organization](https://github.com/bitfinity-network): Bitfinity Network open-source repos.
+- [bitfinity-evm-sdk](https://github.com/bitfinity-network/bitfinity-evm-sdk): Bitfinity EVM canister SDK (Rust).
+- [canister-sdk](https://github.com/bitfinity-network/canister-sdk): SDK for writing/testing Internet Computer canisters (Rust).
+- [bit-fusion-sdk](https://github.com/bitfinity-network/bit-fusion-sdk): Bitfusion bridging SDK (Rust).
+- [@infinityswapofficial/token-lists](https://www.npmjs.com/package/@infinityswapofficial/token-lists): InfinitySwap token list specification (npm).
+- [Bitfinity Wallet](https://wallet.bitfinity.network/): Digital asset wallet.
+
+## Repository artifacts
+
+- [Packages / SDKs](https://raw.githubusercontent.com/api-evangelist/infinityswap/refs/heads/main/packages/infinityswap-packages.yml)
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/infinityswap/refs/heads/main/authentication/infinityswap-authentication.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/infinityswap/refs/heads/main/conventions/infinityswap-conventions.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/infinityswap/refs/heads/main/conformance/infinityswap-conformance.yml)
+- [Sandbox](https://raw.githubusercontent.com/api-evangelist/infinityswap/refs/heads/main/sandbox/infinityswap-sandbox.yml)
+
+## Community
+
+- [Discord](https://discord.bitfinity.network/)
+- [Twitter/X](https://twitter.com/bitfinitynet)
+- [Telegram](https://t.me/infinityswapofficial)

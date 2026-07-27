@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: derived
+source: https://github.com/bitfinity-network
+notes: >-
+  Bitfinity (formerly InfinitySwap) publishes its client tooling primarily as
+  Rust crates and canister SDKs hosted in its GitHub organizations. The token
+  list is published to npm. crates.io membership could not be verified from this
+  environment (registry blocked the automated request), so Rust SDKs are recorded
+  as first-party GitHub source packages. official: true only where clearly
+  first-party.
+packages:
+- language: javascript
+  registry: npm
+  name: "@infinityswapofficial/token-lists"
+  version: 0.5.2
+  url: https://www.npmjs.com/package/@infinityswapofficial/token-lists
+  install: npm install @infinityswapofficial/token-lists
+  source: https://github.com/infinity-swap/token-lists
+  description: InfinitySwap Token Lists specification.
+  official: true
+- language: rust
+  registry: github
+  name: bitfinity-evm-sdk
+  url: https://github.com/bitfinity-network/bitfinity-evm-sdk
+  install: "cargo add --git https://github.com/bitfinity-network/bitfinity-evm-sdk"
+  description: Bitfinity EVM canister SDK.
+  official: true
+- language: rust
+  registry: github
+  name: canister-sdk
+  url: https://github.com/bitfinity-network/canister-sdk
+  install: "cargo add --git https://github.com/bitfinity-network/canister-sdk"
+  description: SDK for writing and testing canisters for the Internet Computer in Rust.
+  official: true
+- language: rust
+  registry: github
+  name: bit-fusion-sdk
+  url: https://github.com/bitfinity-network/bit-fusion-sdk
+  install: "cargo add --git https://github.com/bitfinity-network/bit-fusion-sdk"
+  description: Bitfusion bridging SDK (BTC / Bitcoin on-chain asset bridging).
+  official: true
+- language: rust
+  registry: github
+  name: ord-rs
+  url: https://github.com/bitfinity-network/ord-rs
+  install: "cargo add --git https://github.com/bitfinity-network/ord-rs"
+  description: Ordinals inscriptions and BRC20 Rust library.
+  official: true

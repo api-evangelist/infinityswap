@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.bitfinity.network/
+notes: >-
+  Cross-cutting request/response semantics for the Bitfinity EVM JSON-RPC API.
+  Bitfinity implements the standard Ethereum JSON-RPC contract, so conventions
+  follow JSON-RPC 2.0 and Ethereum client norms rather than a bespoke REST style.
+protocol: JSON-RPC 2.0
+transport:
+  method: HTTP POST
+  content_type: application/json
+  endpoint: https://mainnet.bitfinity.network
+  batch_supported: true
+  batch_note: "JSON-RPC 2.0 batch (array of request objects) per the Ethereum client convention."
+authentication:
+  style: none
+  detail: "Public keyless RPC; see authentication/infinityswap-authentication.yml"
+encoding:
+  numbers: "Quantities and block/tx data are hex-encoded strings prefixed with 0x (Ethereum convention)."
+  addresses: "20-byte hex, 0x-prefixed."
+pagination:
+  style: none
+  detail: >-
+    No REST-style pagination. Range queries (e.g. eth_getLogs) are bounded by
+    fromBlock/toBlock parameters and node-side result limits.
+versioning:
+  scheme: none-at-api-layer
+  detail: >-
+    No API version in the URL/header. The JSON-RPC contract is versioned by the
+    Ethereum method set and the EVM client version (evm_core/0.2.0, reported via
+    web3_clientVersion). Chain identity is EIP-155 chain ID 355110.
+idempotency:
+  supported: protocol-level
+  detail: >-
+    No Idempotency-Key header. Transaction idempotency is enforced natively by
+    the account nonce (EIP-155): a signed transaction with a given nonce can be
+    included at most once, so resubmitting the same raw transaction is a safe
+    no-op. Read methods are inherently idempotent.
+  header: null
+error_envelope:
+  format: json-rpc-error
+  shape: '{"jsonrpc":"2.0","id":<id>,"error":{"code":<int>,"message":<string>,"data":<optional>}}'
+  detail: "Standard JSON-RPC 2.0 error object; not RFC 9457 problem+json."
+rate_limit_signaling:
+  detail: "No documented rate-limit headers on the public endpoint."
+cross_links:
+  authentication: authentication/infinityswap-authentication.yml
+  conformance: conformance/infinityswap-conformance.yml
+  sandbox: sandbox/infinityswap-sandbox.yml

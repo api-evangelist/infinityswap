@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: derived
+source: "live JSON-RPC probe of https://mainnet.bitfinity.network + https://docs.bitfinity.network"
+notes: >-
+  Standards conformance derived from live probing of the Bitfinity EVM mainnet
+  JSON-RPC endpoint and the published EVM/getting-started docs. No published
+  third-party compliance certifications (SOC 2 / ISO 27001 / PCI) were found, so
+  no Compliance pointer is emitted.
+standards:
+- id: json-rpc-2.0
+  conforms: true
+  evidence: >-
+    Endpoint responds to JSON-RPC 2.0 requests; eth_chainId, net_version,
+    eth_blockNumber, web3_clientVersion all returned well-formed
+    {"jsonrpc":"2.0","id":1,"result":...} envelopes.
+- id: ethereum-json-rpc
+  conforms: true
+  evidence: >-
+    Standard Ethereum JSON-RPC method namespaces (eth_*, net_*, web3_*) served;
+    Ethereum tooling compatibility (MetaMask/Remix/Hardhat) documented.
+- id: eip-155
+  conforms: true
+  evidence: "Replay-protected chain identity present: eth_chainId=0x56b26, net_version=355110."
+- id: evm-bytecode
+  conforms: true
+  evidence: "EVM execution layer (evm_core/0.2.0) for Solidity smart contract deployment, documented under EVM Spec."
+- id: oauth2
+  conforms: false
+  evidence: "Public keyless JSON-RPC; no OAuth surface."
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: "Errors use the JSON-RPC 2.0 error object, not application/problem+json."

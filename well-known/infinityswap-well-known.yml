@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+host: https://bitfinity.network
+notes: >-
+  bitfinity.network is a Next.js single-page app that returns HTTP 200 with an
+  HTML shell for every unknown path (soft-404). Each /.well-known/ probe below
+  returned status 200 but served the SPA HTML document, not a real well-known
+  resource — so NONE are genuine discovery documents. Recorded here as absent to
+  avoid capturing false positives. The docs host returns hard 404s.
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  genuine: false
+  reason: SPA HTML soft-404 (content-type text/html, Next.js shell)
+  file: null
+- path: /.well-known/openid-configuration
+  status: 200
+  genuine: false
+  reason: SPA HTML soft-404
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  genuine: false
+  reason: SPA HTML soft-404
+  file: null
+- path: /.well-known/api-catalog
+  status: 200
+  genuine: false
+  reason: SPA HTML soft-404
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 200
+  genuine: false
+  reason: SPA HTML soft-404
+  file: null
+- path: /llms.txt (docs host)
+  status: 404
+  genuine: false
+  file: null
